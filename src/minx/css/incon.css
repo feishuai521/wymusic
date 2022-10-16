@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "iconfont"; /* Project id 3597642 */
+    /* Color fonts */
+    src: 
+         url('../../assets/iconfont.woff2?t=1660817377558') format('woff2'),
+         url('../../assets/iconfont.woff?t=1660817377558') format('woff'),
+         url('../../assets/iconfont.ttf?t=1660817377558') format('truetype');
+  }

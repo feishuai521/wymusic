@@ -1,0 +1,85 @@
+@import url(./incon.css);
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.zuo:before {
+  content: '\e76a';
+}
+.fenxiang:before {
+  content: '\ebab';
+}
+.playCircle:before {
+  content: '\ea6e';
+}
+.playlistHeart:before {
+  content: '\ea6f';
+}
+.playSquare:before {
+  content: '\ea72';
+}
+.xiazai:before {
+  content: '\e856';
+}
+.play:before {
+  content: '\ea6d';
+}
+.tuijian:before {
+  content: '\e60a';
+}
+
+.gedan:before {
+  content: '\e66a';
+}
+
+.paihangbang:before {
+  content: '\f202';
+}
+
+.shouyinji:before {
+  content: '\e611';
+}
+/* 
+暂停
+*/
+.zanting:before {
+  content: '\e629';
+}
+
+.shipinbofang:before {
+  content: '\e601';
+}
+
+.shanchu:before {
+  content: '\e718';
+}
+
+.vip:before {
+  content: '\e73d';
+}
+
+.bofang:before {
+  content: '\e87c';
+}
+
+.bofang1:before {
+  content: '\e624';
+}
+
+.sousu:before {
+  content: '\e621';
+}
+
+.liebiao:before {
+  content: '\e600';
+}
+.xuanzhong:before {
+  content: '\e606';
+}
+.jia:before {
+  content: '\e8e1';
+}

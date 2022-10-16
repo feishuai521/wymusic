@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+/* //清除塌陷盒子 */
+*::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
