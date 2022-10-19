@@ -3,7 +3,7 @@
  * @LastEditors: feishuai
  * @Description: blog.feishuai521.cn`
  * @Date: 2022-09-26 20:22:49
- * @LastEditTime: 2022-10-16 14:37:03
+ * @LastEditTime: 2022-10-19 17:11:46
 -->
 <template>
   <div class="itemMIsTop">
@@ -26,9 +26,16 @@
     <div class="itemMIssction">
       <div class="itemMIssction_item1"><img :src="list.coverImgUrl" alt="" /></div>
       <div class="itemMIssction_item1">
+        <!-- {{ list }} -->
         <div style="color: #fff">{{ list.name }}</div>
-        <div><img src="" alt="" /><span></span> ></div>
-        <div></div>
+        <div class="userjs">
+          <img :src="list.creator.avatarUrl" alt="" width="30" style="border-radius: 50%" />
+          <span style="color: #8c8c90">{{ list.creator.nickname }}</span>
+          <span> &gt;</span>
+        </div>
+        <div style="color: #acb1b1; font-size: 14px" class="signature">
+          {{ list.creator.signature }}
+        </div>
       </div>
     </div>
   </div>
@@ -50,6 +57,7 @@ type T = {
 if ((props.list.creator = '')) {
   const list: T = JSON.parse(sessionStorage.getItem('Muse') as unknown as object | string | any)
   props.list = list.playlist
+  console.log(list)
 }
 </script>
 
@@ -109,6 +117,23 @@ if ((props.list.creator = '')) {
       text-align: left;
       &:nth-child(1) {
         color: #fff;
+      }
+      .userjs {
+        display: flex;
+        line-height: 45px;
+        align-items: center;
+        color: #9a9a9a;
+        > span {
+          display: inline-block;
+          padding: 0 5px;
+        }
+      }
+      .signature {
+        width: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
       }
     }
   }
