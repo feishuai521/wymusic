@@ -25,6 +25,9 @@
 .xiazai:before {
   content: '\e856';
 }
+.xiaoxi:before {
+  content: '\e711';
+}
 .play:before {
   content: '\ea6d';
 }
