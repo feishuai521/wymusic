@@ -3,7 +3,7 @@
  * @LastEditors: feishuai
  * @Description: blog.feishuai521.cn`
  * @Date: 2022-08-23 12:15:44
- * @LastEditTime: 2022-10-26 16:37:19
+ * @LastEditTime: 2022-10-27 10:16:06
 -->
 <template>
   <!-- <div>详情页</div> -->
@@ -18,7 +18,7 @@ import { Getplaylist, GetplayLt } from '../../request/index'
 import Topvue from './Top.vue'
 import ListVue from './List.vue'
 const route = useRoute()
-const cosubscribedCount: number = JSON.parse(sessionStorage.getItem('Muse')).playlist.subscribedCount
+let cosubscribedCount: number = JSON.parse(sessionStorage.getItem('Muse')).playlist.subscribedCount
 
 onMounted(async () => {
   const { data } = await Getplaylist(route.query.id)
