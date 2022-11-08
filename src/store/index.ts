@@ -3,9 +3,21 @@
  * @LastEditors: feishuai
  * @Description: blog.feishuai521.cn`
  * @Date: 2022-10-26 19:34:10
- * @LastEditTime: 2022-10-27 10:33:50
+ * @LastEditTime: 2022-11-08 18:01:12
  */
 import { defineStore } from 'pinia'
+
+type muse = {
+  id: number
+  al: {
+    id: number
+    name: string
+    picUrl: string
+    tns: never[]
+    pic_str: string
+    pic: number
+  }
+}[]
 export const AminStore = defineStore('admin', {
   state: () => ({
     playlist: [
@@ -22,5 +34,23 @@ export const AminStore = defineStore('admin', {
       },
     ],
     playlistindex: 0,
+    isbtnshow: false,
   }),
+  getters: {},
+  actions: {
+    updataplaylist(list: any) {
+      console.log(list)
+      this.playlist = list
+    },
+
+    updataisShow(show: boolean) {
+      console.log(show)
+
+      this.isbtnshow = show
+    },
+    unpdtaindex(id: number) {
+      this.playlistindex = id
+      console.log(this.playlist[this.playlistindex])
+    },
+  },
 })

@@ -3,7 +3,7 @@
  * @LastEditors: feishuai
  * @Description: blog.feishuai521.cn`
  * @Date: 2022-10-26 15:18:09
- * @LastEditTime: 2022-10-27 10:20:02
+ * @LastEditTime: 2022-11-08 18:16:38
 -->
 <template>
   <div class="itemMusicList">
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="itemListContent">
-      <div class="itemList" v-for="(item, i) in list" :key="item.id">
+      <div class="itemList" v-for="(item, i) in list" :key="item.id" @click="updatamuse(i)">
         <div class="listLeft">
           <span class="index">{{ i + 1 }}</span>
           <div class="content">
@@ -26,6 +26,7 @@
             <span> {{ item.ar[0].name }}</span>
           </div>
         </div>
+
         <div class="listRight">
           <FS-icon class="icon" name="playSquare" :size="20" v-show="item.mv"></FS-icon>
           <FS-icon name="liebiao" class="liebiaos" :size="20"></FS-icon>
@@ -37,11 +38,25 @@
 </template>
 
 <script setup lang="ts">
-const props: any = defineProps({
-  list: Object,
+import { onUpdated, onMounted } from 'vue'
+import { AminStore } from '../../store/index'
+const store = AminStore()
+const props = defineProps({
+  list: Object as any,
   subscribedCount: Number,
 })
-console.log(props)
+onMounted(() => {
+  store.updataplaylist(props.list)
+})
+
+//当他更新时候数据渲染
+onUpdated(() => {
+  store.updataplaylist(props.list)
+})
+
+function updatamuse(index: number) {
+  store.unpdtaindex(index)
+}
 </script>
 
 <style lang="scss" scoped>

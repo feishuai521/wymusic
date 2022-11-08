@@ -3,12 +3,13 @@
  * @LastEditors: feishuai
  * @Description: blog.feishuai521.cn`
  * @Date: 2022-08-23 12:15:44
- * @LastEditTime: 2022-10-27 10:16:06
+ * @LastEditTime: 2022-11-08 15:38:35
 -->
 <template>
   <!-- <div>详情页</div> -->
   <Topvue :list="Muse.playlist" />
-  <ListVue :list="Muse.songs" :subscribedCount="cosubscribedCount" />
+
+  <ListVue :list="Muse.songs" :subscribedCount="Muse.playlist.subscribedCount" />
 </template>
 
 <script setup lang="ts">
@@ -18,8 +19,6 @@ import { Getplaylist, GetplayLt } from '../../request/index'
 import Topvue from './Top.vue'
 import ListVue from './List.vue'
 const route = useRoute()
-let cosubscribedCount: number = JSON.parse(sessionStorage.getItem('Muse')).playlist.subscribedCount
-
 onMounted(async () => {
   const { data } = await Getplaylist(route.query.id)
   Muse.playlist = data.playlist
@@ -37,8 +36,6 @@ const Muse: any = shallowReactive({
   playlist: {},
   songs: {},
 })
-
-console.log(Muse.playlist)
 </script>
 
 <style scoped lang="scss"></style>
